@@ -1,0 +1,80 @@
+name: Orbitals
+options:
+  bundleIdPrefix: com.utkarsh
+  deploymentTarget:
+    iOS: "27.0"
+  xcodeVersion: "27.0"
+  createIntermediateGroups: true
+settings:
+  base:
+    SWIFT_VERSION: "6.0"
+    MARKETING_VERSION: "1.0"
+    CURRENT_PROJECT_VERSION: "7"
+    DEVELOPMENT_TEAM: ""
+    CODE_SIGN_STYLE: Automatic
+    ENABLE_USER_SCRIPT_SANDBOXING: YES
+targets:
+  Orbitals:
+    type: application
+    platform: iOS
+    sources: [Orbitals]
+    info:
+      path: Orbitals/Info.plist
+      properties:
+        CFBundleDisplayName: Orbitals
+        CFBundleShortVersionString: $(MARKETING_VERSION)
+        CFBundleVersion: $(CURRENT_PROJECT_VERSION)
+        NSCameraUsageDescription: "Orbitals uses your camera to place glowing orbital visualizations on surfaces in your room."
+        UILaunchScreen:
+          UIColorName: LaunchBackground
+        UIApplicationSceneManifest:
+          UIApplicationSupportsMultipleScenes: false
+        UISupportedInterfaceOrientations:
+          - UIInterfaceOrientationPortrait
+          - UIInterfaceOrientationLandscapeLeft
+          - UIInterfaceOrientationLandscapeRight
+        UISupportedInterfaceOrientations~ipad:
+          - UIInterfaceOrientationPortrait
+          - UIInterfaceOrientationPortraitUpsideDown
+          - UIInterfaceOrientationLandscapeLeft
+          - UIInterfaceOrientationLandscapeRight
+        UIUserInterfaceStyle: Dark
+        CADisableMinimumFrameDurationOnPhone: true
+        ITSAppUsesNonExemptEncryption: false
+        LSApplicationCategoryType: public.app-category.education
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.utkarsh.orbitals
+        TARGETED_DEVICE_FAMILY: "1,2"
+        ASSETCATALOG_COMPILER_APPICON_NAME: AppIcon
+        ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME: AccentColor
+        MTL_FAST_MATH: YES
+        SUPPORTS_MACCATALYST: NO
+        SWIFT_STRICT_CONCURRENCY: complete
+  OrbitalsTests:
+    type: bundle.unit-test
+    platform: iOS
+    sources: [OrbitalsTests]
+    dependencies:
+      - target: Orbitals
+    settings:
+      base:
+        GENERATE_INFOPLIST_FILE: YES
+  OrbitalsUITests:
+    type: bundle.ui-testing
+    platform: iOS
+    sources: [OrbitalsUITests]
+    dependencies:
+      - target: Orbitals
+    settings:
+      base:
+        GENERATE_INFOPLIST_FILE: YES
+schemes:
+  Orbitals:
+    build:
+      targets:
+        Orbitals: all
+        OrbitalsTests: [test]
+        OrbitalsUITests: [test]
+    test:
+      targets: [OrbitalsTests, OrbitalsUITests]

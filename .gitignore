@@ -1,0 +1,60 @@
+DerivedData/
+build/
+*.xcuserstate
+xcuserdata/
+.DS_Store
+TestResults/
+
+# Safe source import exclusions
+/Orbitals 2.xcodeproj/
+/Orbitals 3.xcodeproj/
+
+# Local credentials and signing material
+.env
+.env.*
+!.env.example
+*.p12
+*.pfx
+*.key
+*.pem
+*.mobileprovision
+*.provisionprofile
+.claude/
+.codex/
+
+# Xcode, Swift, and local build products
+.DS_Store
+.build/
+DerivedData*/
+build/
+xcuserdata/
+*.xcuserstate
+*.xcresult/
+*.xcarchive/
+*.ipa
+*.app/
+*.dSYM/
+
+# Public source snapshot: keep credentials and local data out of Git.
+.DS_Store
+.env
+.env.*
+!.env.example
+*.pem
+*.p12
+*.pfx
+*.mobileprovision
+*.xcuserstate
+xcuserdata/
+.build/
+DerivedData/
+build/
+Build/
+node_modules/
+*.xcresult/
+*.log
+*.safetensors
+*.gguf
+*.ipsw
+*.pcap
+*.pcapng
